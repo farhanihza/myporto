@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>MyPorto</title>
+</head>
+<body>
+    <div class="header">
+        <img src="./IMG-20210328-WA0013-2.jpg" alt="">
+        <div class="title">
+            <span>MY NAME IS</span>
+            <h1>FARHAN IHZA</h1>
+            <h4>I'M A SALES DATA ANALYST</h4>
+        </div>
+    </div>
+    <img src="./telephone.png" id="contact">
+    <a href="https://api.whatsapp.com/send/?phone=6281221044957&text=hi+i+wanna+hire+you" target="_blank" id="wa"><img src="./whatsapp.png"></a>
+    <a href="mailto:farhanihza76@gmail.com" target="_blank" id="mail"><img src="./gmail.png"></a>
+    <div class="about-me">
+        <h1>About Me</h1>
+        <img src="./DSCF8743-2.jpg" alt="">
+        <div class="sub-about">
+               <p>I'm a Sales Data Analyst with two years experience in distributor company and an exensive range
+                of skills including analyst and Microsoft. Strongly ficused on the ability to complete task accurately
+                in a fast-paced environment with conflicting deadlines <br>
+                <a href="#" target="_blank" id="cv"><button>DOWNLOAD CV</button></a>
+                </p>
+                <div class="skills">
+                    <span>Microsoft Office</span><span id="persen">85%</span>
+                    <div class="bar-skill"><div id="colored-of"></div></div>
+                    <span>Data Warehousing</span><span id="persen">80%</span>
+                    <div class="bar-skill"><div id="colored-ware"></div></div>
+                    <span>Data Mining</span><span id="persen">80%</span>
+                    <div class="bar-skill"><div id="colored-min"></div></div>
+                    <span>Akhlak</span><span id="persen">0%</span>
+                    <div class="bar-skill"><div id="colored-akhlak"></div></div>
+                </div>
+        </div>
+    </div>
+    <div class="services">
+            <h1>Services</h1>
+            <div class="serv serv1"><img src="./office.png" id="imgserv1"><div class="sub-of sub-of1"><ul class="ul ul1"><li>Microsoft Excel</li><li>Microsoft Word</li><li>Microsoft Power Point</li></ul></div></div>
+            <div class="serv serv2"><img src="./stat.png" id="imgserv2"><div class="sub-of sub-of2"><ul class="ul ul2"><li>Perfect Statistic</li></ul></div></div>
+            <div class="serv serv3"><img src="./plan.png" id="imgserv3"><div class="sub-of sub-of3"><ul class="ul ul3"><li>Perfect Planning</li></ul></div></div>
+    </div>
+    <div class="info">
+        <h1>Experiences</h1>
+        <div class="school">
+            <div class="track"></div>
+            <ul>
+                <li><b>SMK Negeri 1 Majalengka</b></li>
+                <li class="sub-info"> Computer and Network Engineering | 2018</li>
+                <li class="sub-info"> Grades | 80,25</li>
+            </ul>
+            <ul id="school-2">
+                <li><b>Universitas Terbuka</b></li>
+                <li class="sub-info">English Literature | 2023</li>
+                <li class="sub-info">Bachelor of English LIterature</li>
+            </ul>
+        </div>
+        <div class="exp">
+            <div class="track-exp"></div>
+            <ul>
+                <li><b>PT. Artaboga Cemerlang | 2018</b></li>
+                <li class="sub-info">Business and Survey Development | Staff</li>
+            </ul>
+            <ul id="exp-2">
+                <li><b>PT. Artaboga Cemerlang | 2019</b></li>
+                <li class="sub-info">Sales Data Analyst | Staff</li>
+            </ul>
+            <ul id="exp-3">
+                <li><b>PT. Artaboga Cemerlang | 2021</b></li>
+                <li class="sub-info">Sales Data Analyst | Middle Supervisor</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="./mylogo.png" alt=""><h4> Copyright. Fadhilfakhruddin</h4>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $("#cv").click(function(e){
+                e.preventDefault();
+
+                window.location.href
+                    = "./CV_FARHAN.pdf";
+            });
+
+            let counter = true;
+            $("#contact").click(function(){
+                if(counter) {
+                    $("#contact").css("transform","rotate(0.7turn)")
+                    $("#wa,#mail").css("display","inline")
+                    $("#mail").animate({
+                        opacity : "1",
+                        right : "30vh"
+                    },"fast")
+                    $("#wa").animate({
+                        opacity : "1",
+                        right : "15vh"
+                    },"fast")
+                    counter = false
+                } else {
+                    $("#contact").css("transform","rotate(0.38turn)")
+                    $("#wa,#mail").animate({
+                        right : "1vh",
+                        opacity : "0"
+                    },"fast")
+                    $("#wa,#mail").css("display","none")
+                    counter = true
+                }
+            })
+
+            $(".serv1").mouseenter(function(){
+                $("#imgserv1").css("filter","grayscale(0)")
+                $(".ul1").css("display","block")
+                $(".sub-of1").animate({
+                    height : "65px"
+                },"fast")
+                $(".ul1").animate({
+                    opacity : "1"
+                },"fast")
+            })
+            $(".serv2").mouseenter(function(){
+                $("#imgserv2").css("filter","grayscale(0)")
+                $(".ul2").css("display","block")
+                $(".sub-of2").animate({
+                    height : "65px"
+                },"fast")
+                $(".ul2").animate({
+                    opacity : "1"
+                },"fast")
+            })
+            $(".serv3").mouseenter(function(){
+                $("#imgserv3").css("filter","grayscale(0)")
+                $(".ul3").css("display","block")
+                $(".sub-of3").animate({
+                    height : "65px"
+                },"fast")
+                $(".ul3").animate({
+                    opacity : "1"
+                },"fast")
+            })
+
+            $(".serv1").mouseleave(function(){
+                $("#imgserv1").css("filter","grayscale(1)")
+                $(".ul1").css("display","none")
+                $(".sub-of1").animate({
+                    height : "0px"
+                },"fast")
+            })
+            $(".serv2").mouseleave(function(){
+                $("#imgserv2").css("filter","grayscale(1)")
+                $("#imgserv2").css("filter","grayscale(1)")
+                $(".ul2").css("display","none")
+                $(".sub-of2").animate({
+                    height : "0px"
+                },"fast")
+            })
+            $(".serv3").mouseleave(function(){
+                $("#imgserv3").css("filter","grayscale(1)")
+                $("#imgserv3").css("filter","grayscale(1)")
+                $(".ul3").css("display","none")
+                $(".sub-of3").animate({
+                    height : "0px"
+                },"fast")
+            })
+        })
+    </script>
+</body>
+</html>
